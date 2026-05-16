@@ -288,7 +288,7 @@ export async function boot(app) {
       return;
     }
     const key = event.key.toLowerCase();
-    const command =
+    let command =
       key === "arrowup" || key === "w"
         ? "U"
         : key === "arrowdown" || key === "s"
@@ -306,6 +306,14 @@ export async function boot(app) {
                     : null;
     if (!command) {
       return;
+    }
+    // Flip left/right commands when camera is flipped
+    if (controller.renderer?.cameraFlipH) {
+      if (command === "L") {
+        command = "R";
+      } else if (command === "R") {
+        command = "L";
+      }
     }
     event.preventDefault();
     handleCommand(controller, elements, command);
