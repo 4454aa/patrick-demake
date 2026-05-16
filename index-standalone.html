@@ -710,6 +710,7 @@ function createBlock(overrides = {}) {
     flipH: false,
     tempFlipH: false,
     flipHStart: false,
+    fadeFlipH: false,
     possessable: false,
     tempInnerPush: false,
     justEnteredArray: null,
@@ -1312,7 +1313,11 @@ function tryImpulse(state, playerId, dir) {
     renderPhantoms: [],
     playerChanges: [],
     command: dir.dx === 1 ? "R" : dir.dx === -1 ? "L" : dir.dy === 1 ? "D" : "U",
-    stateBefore: snapshotState(state)
+    stateBefore: snapshotState(state),
+    // C# UndoManager.Turn fields for camera flip state.
+    cameraFlipChanged: false,
+    fromCameraFlipH: false,
+    toCameraFlipH: false
   };
 
   const context = {
@@ -2231,8 +2236,20 @@ function resolveMove(context, block, toLevel, toX, toY, dx, dy) {
   const trail = collectMoveTrail(context, block);
   const moveType = trail.length > 0 ? trail[trail.length - 1].moveType : null;
   const projection = computeProjectionFromTrail(trail) ?? { dx: 0, dy: 0, xscale: 1, yscale: 1 };
+  const cameraProjection = computeProjectionParentFromTrail(trail);
   const animKind = trail.some((step) => step.moveType === "Enter" || step.moveType === "Exit") ? "ENTER_EXIT" : "NORMAL";
   const existing = context.resolvedMoves.get(block.id);
+  if (cameraProjection) {
+    context.transition.cameraProjection = cameraProjection;
+    context.transition.camX = cameraProjection.dx;
+    context.transition.camY = cameraProjection.dy;
+    context.transition.camXS = cameraProjection.xscale;
+    context.transition.camYS = cameraProjection.yscale;
+    context.transition.cameraMovedThisTurn = true;
+  }
+  if (block.isPlayer && block.outerLevel !== toLevel && block.tempFlipH !== block.flipH) {
+    context.transition.cameraFlipChanged = true;
+  }
   if (existing) {
     existing.toLevel = toLevel;
     existing.toX = toX;
@@ -2356,6 +2373,71 @@ function buildRenderPhantoms(moves) {
  */
 function toCSharpY(level, y) {
   return (level?.height ?? 1) - 1 - y;
+}
+
+/**
+ * Mirrors Projection.ComputeProjectionParent in screen-space coordinates.
+ *
+ * @param {Array<any>} trail
+ * @returns {{ xscale: number, yscale: number, dx: number, dy: number } | null}
+ */
+function computeProjectionParentFromTrail(trail) {
+  if (!Array.isArray(trail) || trail.length === 0) {
+    return null;
+  }
+  if (trail.length === 1 && trail[0].moveType === "Slide") {
+    return { xscale: 1, yscale: 1, dx: 0, dy: 0 };
+  }
+
+  const moves = trail.filter((move) => move.moveType !== "Slide");
+  if (moves.length === 0) {
+    return null;
+  }
+
+  let dx = 0;
+  let dy = 0;
+  let xscale = 1;
+  let yscale = 1;
+  let flipSign = 1;
+
+  for (let index = moves.length - 1; index >= 0; index -= 1) {
+    const move = moves[index];
+    if (move.moveType === "Enter") {
+      const block = move.toLevelBlock;
+      const fromLevel = move.fromLevel;
+      if (!block || !fromLevel) {
+        return null;
+      }
+      if (block.flipH) {
+        flipSign *= -1;
+      }
+      dx += (block.xpos - (fromLevel.width - 1) / 2) / xscale * flipSign;
+      dy += (block.ypos - (fromLevel.height - 1) / 2) / yscale;
+      xscale /= fromLevel.width;
+      yscale /= fromLevel.height;
+    } else if (move.moveType === "Exit") {
+      const toLevel = move.toLevel;
+      const fromLevelBlock = move.fromLevelBlock;
+      if (!toLevel || !fromLevelBlock) {
+        return null;
+      }
+      xscale *= toLevel.width;
+      yscale *= toLevel.height;
+      dx -= (fromLevelBlock.xpos - (toLevel.width - 1) / 2) / xscale * flipSign;
+      dy -= (fromLevelBlock.ypos - (toLevel.height - 1) / 2) / yscale;
+      if (getExitBlock(move.fromLevel)?.flipH) {
+        flipSign *= -1;
+      }
+    }
+  }
+
+  const baseLevel = moves.find((move) => move.fromLevel)?.fromLevel ?? null;
+  if (!baseLevel) {
+    return null;
+  }
+  xscale *= baseLevel.camZoomFactor ?? 1;
+  yscale *= baseLevel.camZoomFactor ?? 1;
+  return { xscale, yscale, dx, dy };
 }
 
 /**
@@ -4681,6 +4763,7 @@ class CanvasRenderer {
     this.tintContext = null;
     this.wallBigQuads = null;
     this.wallBigDataLoadStarted = false;
+    this.cameraFlipH = false;
     this.beginTextureLoad();
   }
 
@@ -5202,7 +5285,7 @@ class CanvasRenderer {
     context.restore();
 
     if (drawFace && (block.isPlayer || block.possessable)) {
-      this.drawFace(block, x, y, width, height, flipH);
+      this.drawFace(block, x, y, width, height, flipH !== Boolean(block.flipH));
     }
   }
 
@@ -5298,10 +5381,16 @@ class CanvasRenderer {
     }
 
     const animation = options.animation ?? null;
-    const focusLevel = state.focusBlock.outerLevel;
+    const focusBlock = state.focusBlock;
+    const focusLevel = focusBlock.outerLevel;
     const pixelStep = this.pixelRatio ? 1 / this.pixelRatio : 1;
     const viewport = computeLevelViewport(focusLevel, 0, 0, width, height, 24, 4, pixelStep);
-    this.drawLevel(state, focusLevel, viewport.originX, viewport.originY, viewport.cellSize, animation, 0, new Set([focusLevel.id]));
+
+    // Apply camera flip using horizontal mirror
+    const cameraFlipH = Boolean(this.cameraFlipH);
+    this.withHorizontalMirror(viewport.originX, viewport.drawWidth, cameraFlipH, () => {
+      this.drawLevel(state, focusLevel, viewport.originX, viewport.originY, viewport.cellSize, animation, 0, new Set([focusLevel.id]));
+    });
 
     if (options.infoText) {
       this.drawInfo(width, height, options.infoText);
@@ -5811,8 +5900,9 @@ class CanvasRenderer {
    * @param {number} y
    * @param {number} width
    * @param {number} height
+   * @param {boolean} [flipH]
    */
-  drawFlipShine(block, x, y, width, height) {
+  drawFlipShine(block, x, y, width, height, flipH = false) {
     const intensity = resolveFlipIntensity(block);
     if (intensity <= 0 || block?.subLevel?.filledWithWalls) {
       return;
@@ -5820,7 +5910,7 @@ class CanvasRenderer {
     const context = this.context;
     const screenFraction = this.getFractionOfScreen(width, height);
     const alpha = Math.min(0.22, Math.max(0.04, -Math.log10(screenFraction + 0.5) + 0.18)) * intensity;
-    const reverse = Boolean(block.flipH || block.specialEffect === 3);
+    const reverse = Boolean(block.flipH || block.specialEffect === 3) !== flipH;
     const gradient = context.createLinearGradient(reverse ? x + width : x, y, reverse ? x : x + width, y);
     gradient.addColorStop(0, "rgba(255,255,255,0)");
     gradient.addColorStop(0.3, "rgba(255,255,255,0)");
@@ -5906,7 +5996,7 @@ class CanvasRenderer {
           }
 
           if (block.isPlayer && cellSize >= 9) {
-            this.drawFace(block, blockX + inset, blockY + inset, Math.max(1, cellSize - inset * 2), Math.max(1, cellSize - inset * 2), block.flipH);
+            this.drawFace(block, blockX + inset, blockY + inset, Math.max(1, cellSize - inset * 2), Math.max(1, cellSize - inset * 2), false);
           }
         }
       }
@@ -6018,7 +6108,7 @@ class CanvasRenderer {
       this.drawTexture("blockGradient", drawX, drawY, width, height, 0.06);
     }
 
-    this.drawFlipShine(block, drawX, drawY, width, height);
+    this.drawFlipShine(block, drawX, drawY, width, height, flipH);
 
     if (shouldDrawInfinityEffect(block)) {
       const target = block.subLevel?.infZone && nestedWindow
@@ -6028,7 +6118,7 @@ class CanvasRenderer {
     }
 
     if (block.isPlayer || block.possessable) {
-      this.drawFace(block, drawX, drawY, width, height, flipH);
+      this.drawFace(block, drawX, drawY, width, height, flipH !== Boolean(block.flipH));
     }
   }
 
@@ -7276,7 +7366,7 @@ async function boot(app) {
       return;
     }
     const key = event.key.toLowerCase();
-    const command =
+    let command =
       key === "arrowup" || key === "w"
         ? "U"
         : key === "arrowdown" || key === "s"
@@ -7294,6 +7384,14 @@ async function boot(app) {
                     : null;
     if (!command) {
       return;
+    }
+    // Flip left/right commands when camera is flipped
+    if (controller.renderer?.cameraFlipH) {
+      if (command === "L") {
+        command = "R";
+      } else if (command === "R") {
+        command = "L";
+      }
     }
     event.preventDefault();
     handleCommand(controller, elements, command);
@@ -7417,6 +7515,9 @@ function handleCommand(controller, elements, command) {
     return;
   }
 
+  // C# Movement.Impulse: bool flipH2 = Draw.FlipH; FromCameraFlipH = Draw.FlipH;
+  const cameraFlipHBefore = controller.renderer.cameraFlipH;
+
   controller.sessionInputLog.push(command);
   const turn = runInputCommand(controller.currentState, command);
 
@@ -7431,6 +7532,31 @@ function handleCommand(controller, elements, command) {
       startedAt: performance.now(),
       duration: hasEnterOrExit ? ENTER_LENGTH * 1000 : baseDuration
     };
+
+    // C# Movement.cs:200 — after TurnCompleted (which applies block.FlipH = toFlipH):
+    //   if (Draw.FlipH != flipH2) { dxLast *= -1; }
+    // ResolveMove sets ToCameraFlipH = !Draw.FlipH when tempFlipH != block.FlipH.
+    // TurnCompleted → DoRedo applies Draw.FlipH = ToCameraFlipH.
+    // So: if player's flip state changed, toggle cameraFlipH (immediate, matching C#).
+    if (command !== "Z" && command !== "Y" && command !== "Restart") {
+      const cameraFlipChanged = Boolean(turn.cameraFlipChanged);
+      if (cameraFlipChanged) {
+        controller.renderer.cameraFlipH = !controller.renderer.cameraFlipH;
+      }
+    }
+
+    // Store camera state for undo/redo (C# FromCameraFlipH/ToCameraFlipH).
+    turn.fromCameraFlipH = cameraFlipHBefore;
+    turn.toCameraFlipH = controller.renderer.cameraFlipH;
+  }
+
+  // C# UndoManager: Undo → Draw.FlipH = t.FromCameraFlipH; Redo → Draw.FlipH = t.ToCameraFlipH;
+  if (command === "Z" && turn?.fromCameraFlipH !== undefined) {
+    controller.renderer.cameraFlipH = turn.fromCameraFlipH;
+  } else if (command === "Y" && turn?.toCameraFlipH !== undefined) {
+    controller.renderer.cameraFlipH = turn.toCameraFlipH;
+  } else if (command === "Restart") {
+    controller.renderer.cameraFlipH = false;
   }
 
   if (controller.currentState.winning) {
