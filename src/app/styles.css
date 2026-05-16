@@ -1,0 +1,443 @@
+@font-face {
+  font-family: "Jost Demake";
+  src: url("/game-data/fonts/Jost-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inconsolata Demake";
+  src: url("/game-data/fonts/Inconsolata-SemiBold.ttf") format("truetype");
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #0c1215;
+  --panel: #122129;
+  --panel-2: #1c313d;
+  --line: #36515f;
+  --ink: #f4f7f2;
+  --muted: #a3b8bf;
+  --accent: #c2ff80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(194, 255, 128, 0.09), transparent 28%),
+    linear-gradient(180deg, #10202a 0%, var(--bg) 45%);
+  color: var(--ink);
+  font-family: "Jost Demake", "Segoe UI", sans-serif;
+}
+
+code {
+  font-family: "Inconsolata Demake", "Courier New", monospace;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(28, 49, 61, 1), rgba(14, 23, 29, 1));
+  color: var(--ink);
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(300px, 390px) minmax(0, 980px);
+  justify-content: center;
+  align-items: start;
+  gap: 18px;
+  min-height: 100vh;
+  padding: 18px;
+}
+
+.panel {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(18, 33, 41, 0.96), rgba(12, 18, 21, 0.96));
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.panel-header h1,
+.panel-header h2 {
+  margin: 0;
+}
+
+.panel-header-game p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.selector-summary,
+.command-hint {
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.page-controls,
+.game-controls,
+.replay-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.page-jump-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#page-jump {
+  width: 80px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(10, 18, 22, 0.85);
+  color: var(--ink);
+  text-align: center;
+}
+
+.selector-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(20, 35, 43, 0.85), rgba(10, 18, 22, 0.85));
+  border: 1px solid rgba(79, 106, 117, 0.45);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.preview-card.locked {
+  border-color: rgba(194, 255, 128, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(194, 255, 128, 0.18), 0 14px 32px rgba(0, 0, 0, 0.24);
+}
+
+.preview-card img {
+  width: 132px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.preview-card.no-image {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.preview-card.no-image img {
+  display: none;
+}
+
+.preview-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.preview-copy strong {
+  font-size: 1.05rem;
+}
+
+.preview-copy span {
+  color: var(--muted);
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.level-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-height: 98px;
+  padding: 14px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.level-button.active {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(194, 255, 128, 0.2);
+}
+
+.level-button.previewed:not(.active) {
+  border-color: rgba(131, 170, 190, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(131, 170, 190, 0.14);
+}
+
+.level-ref {
+  color: var(--accent);
+  font-family: "Inconsolata Demake", monospace;
+}
+
+.level-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.custom-level-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-level-card strong {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-card-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.custom-card-actions button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+}
+
+.record-delete {
+  border-color: rgba(255, 197, 106, 0.42);
+}
+
+.custom-delete-level {
+  border-color: rgba(255, 132, 132, 0.42);
+}
+
+.custom-level-tools {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(79, 106, 117, 0.45);
+}
+
+.custom-level-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.custom-level-actions button {
+  font-size: 0.82rem;
+  padding: 7px 12px;
+}
+
+.custom-status {
+  min-height: 1.2em;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.game-panel {
+  width: min(100%, 980px);
+  justify-self: center;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+}
+
+.canvas-wrap {
+  position: relative;
+  height: clamp(360px, 54vh, 720px);
+  max-height: 72vh;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(79, 106, 117, 0.45);
+  background: radial-gradient(circle at top, rgba(194, 255, 128, 0.05), transparent 38%), #091015;
+}
+
+.official-preview {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: min(24%, 188px);
+  min-width: 120px;
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(14, 22, 28, 0.92), rgba(7, 11, 14, 0.9));
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.official-preview-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.official-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.render-debug-panel {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 10;
+  display: grid;
+  gap: 8px;
+  width: min(300px, calc(100vw - 28px));
+  padding: 12px;
+  border: 1px solid rgba(194, 255, 128, 0.42);
+  border-radius: 8px;
+  background: rgba(6, 12, 15, 0.94);
+  color: var(--ink);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.36);
+}
+
+.render-debug-panel[hidden] {
+  display: none;
+}
+
+.render-debug-panel strong {
+  font-size: 0.86rem;
+}
+
+.render-debug-panel label {
+  display: grid;
+  grid-template-columns: 1fr minmax(124px, 1.1fr);
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.render-debug-panel select {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid rgba(79, 106, 117, 0.8);
+  border-radius: 6px;
+  background: #101b21;
+  color: var(--ink);
+}
+
+.replay-panel {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(79, 106, 117, 0.45);
+  background: rgba(8, 14, 18, 0.72);
+}
+
+.replay-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.replay-panel input[type="range"] {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.save-load-panel {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.save-load-panel button {
+  font-size: 0.82rem;
+  padding: 6px 12px;
+}
+
+.save-status {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 4px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .official-preview {
+    width: min(32%, 160px);
+    top: 12px;
+    right: 12px;
+  }
+
+  .canvas-wrap,
+  #game-canvas {
+    height: clamp(280px, 42vh, 460px);
+  }
+}

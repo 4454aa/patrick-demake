@@ -1,0 +1,307 @@
+⇂ ID → Language name,EN,DE,ES,FR,KO,IT,JA,PTBR,RU,ZHCN
+Area_Intro,Intro,Intro,Introducción,Intro,인트로,Introduzione,はじまり,Introdução,Введение,入门
+Area_Enter,Enter,Betreten,Entrada,Entrer,입장,Entra,箱入り,Entrar,Вход,进入
+Area_Empty,Empty,Leer,Vacío,Vide,빈 공간,Vuoto,空き箱,Vazio,Пустота,空白
+Area_Eat,Eat,Essen,Devorar,Absorber,먹기,Mangia,箱食い,Engolir,Поглощение,吞食
+Area_Reference,Reference,Bezug,Referencia,Référence,자기 반복,Fonte,レファレンス,Referência,Отсылка,参照
+Area_Swap,Swap,Tausch,Cambio,Échanger,교체,Scambia,スワップ,Alternar,Смена,调换
+Area_Center,Center,Mitte,Central,Centrer,센터,Accentra,センター,Centralizar,Центр,居中
+Area_Clone,Clone,Klon,Clon,Clone,클론,Clona,クローン,Clonar,Клон,克隆
+Area_Transfer,Transfer,Transferieren,Transferencia,Transférer,이동,Trasferisci,転移,Transferir,Переход,转移
+Area_Open,Open,Offen,Apertura,Ouvrir,열기,Apri,オープン,Aberto,Пространство,开放
+Area_Flip,Flip,Wenden,Giro,Retourner,반전,Gira,フリップ,Inverso,Отражение,翻转
+Area_Cycle,Cycle,Kreis,Ciclo,Répéter,순환,Compi un ciclo,循環,Ciclo,Цикл,循环
+Area_Player,Player,Spieler,Jugador,Joueur,플레이어,Giocatore,プレイヤー,Jogador,Персонаж,玩家
+Area_Possess,Possess,Besitz ergreifen,Posesión,Posséder,빙의,Possiedi,憑依,Possessão,Одержимость,占据
+Area_Wall,Wall,Mauer,Muro,Mur,벽,Muro,ぬりかべ,Parede,Стена,墙
+Area_InfiniteExit,Infinite Exit,Unendlicher Ausgang,Salida infinita,Sortie infinie,무한 탈출,Esci all'infinito,無限出口,Saída Infinita,Бесконечный выход,无限退出
+Area_InfiniteEnter,Infinite Enter,Unendlicher Eingang,Entrada infinita,Entrée infinie,무한 입장,Accedi all'infinito,無限入口,Entrada Infinita,Бесконечный вход,无限进入
+Area_MultiInfinite,Multi Infinite,Multi-Unendlichkeit,Múltiples infinitos,Infinité multiple,멀티 무한,Multi-infinito,マルチ無限,Multi-infinito,Множество бесконечностей,多重无限
+Area_Reception,Reception,Lobby,Recepción,Réception,리셉션,Ricezione,レセプション,Recepção,Холл,接待
+Area_Challenge,Challenge,Herausforderungen,Desafío,Défi,챌린지,Sfida,チャレンジ,Desafio,Испытание,挑战
+Area_Gallery,Gallery,Galerie,Galería,Galerie,갤러리,Galleria,ギャラリー,Galeria,Галерея,图库
+Area_Appendix,Appendix,Anhang,Apéndice,Annexe,부록,Appendice,オマケ,Apêndice,Приложение,附录
+Area_Priority,Appendix: Priority,Anhang: Priorität,Apéndice: Prioridad,Annexe : Priorité,부록: 우선 순위,Appendice: Priorità,オマケ: 優先度,Apêndice: priorizar,Приложение: очередность действий,附录：优先顺序
+Area_Extrude,Appendix: Extrude,Anhang: Ausstoßen,Apéndice: Expulsión,Annexe : Expulser,부록: 밀어내기,Appendice: Tira fuori,オマケ: 押し出し,Apêndice: expelir,Приложение: вытеснение,附录：挤出
+Area_Push,Appendix: Inner Push,Anhang: Innenschub,Apéndice: Fuerza interior,Annexe : Poussée intérieure,부록: 안에서 밀기,Appendice: Spinta interna,オマケ: 中から押し,Apêndice: empurrão interno,Приложение: толчок изнутри,附录：内推
+Startup_SelectLanguage,Select language,Sprachauswahl,Selecciona tu idioma,Sélectionner la langue,언어 선택,Seleziona lingua,言語選択,Selecione um idioma,Выбрать язык,选择语言
+Startup_AGameBy,a game by {0},Ein Spiel von {0},un juego de {0},un jeu créé par {0},게임 제작: {0},un gioco di {0},開発: {0},um jogo de {0},создатель игры: {0},游戏创作：{0}
+Startup_WithSoundBy,with sound by {0},Mit Musik und Tondesign von {0},con banda sonora de {0},aux sons créés par {0},사운드 제작: {0},con il comparto sonoro di {0},音楽: {0},com música de {0},композитор: {0},声音创作：{0}
+Menu_Paused,Menu,Menü,Menú,Menu,메뉴,Menu,メニュー,Menu,Меню,菜单
+Menu_Resume,Resume,Fortsetzen,Continuar,Reprendre,계속하기,Riprendi,再開,Retomar,Возобновить,恢复
+Menu_ReturnToHub,Return to hub,Zurück zum Hub,Volver al menú,Retourner à la sélection,허브로 돌아가기,Torna all'hub,ハブに戻る,Voltar para a central,Вернуться к выбору уровней,返回关卡中心
+Menu_ReturnToTitle,Return to title,Zurück zum Titelbildschirm,Volver a la pantalla de título,Retourner au menu,타이틀로 돌아가기,Torna al titolo,タイトルに戻る,Voltar para o título,Вернуться на главный экран,返回标题
+Menu_Settings,Settings,Einstellungen,Ajustes,Paramètres,설정,Impostazioni,設定,Configurações,Настройки,设置
+Menu_Movement,Movement settings,Bewegungseinstellungen,Ajustes de movimiento,Paramètres de déplacement,이동 설정,Impostazioni movimento,移動設定,Configurações de movimento,Настройки передвижения,移动设置
+Menu_Display,Display settings,Anzeigeeinstellungen,Ajustes de pantalla,Afficher les paramètres,디스플레이 설정,Impostazioni visualizzazione,画面設定,Configurações de exibição,Настройки экрана,显示设置
+Menu_Language,Language,Sprache,Idioma,Langue,언어,Lingua,言語,Idioma,Язык,语言
+Menu_ThisLanguageName,English,Deutsch,Español,Français,한국어,Italiano,日本語,Português do Brasil,Русский,简体中文
+Menu_SaveFiles,Save files,Spielstände,Archivos de guardado,Sauvegarder les fichiers,저장 파일,Salva file,セーブファイル,Salvar arquivos,Файлы сохранения,保存文件
+Menu_Extras,Extras,Extras,Contenido adicional,Suppléments,엑스트라,Extra,エクストラ,Extras,Дополнительно,附加内容
+Menu_Credits,Credits,Mitwirkende,Créditos,Crédits,제작진,Crediti,クレジット,Créditos,Титры,制作组
+Menu_Links,Links,Links,Enlaces,Liens,링크,Collegamenti,リンク,Links,Ссылки,链接
+Menu_DemoLinks,Demo links,Demo-Links,Enlaces de la demo,Liens de la démo,데모 링크,Collegamenti della demo,デモリンク,Links de demonstração,Ссылки для демоверсии,演示链接
+Menu_GameWebsite,Parabox website,Parabox-Website,Sitio web de Parabox,Site web de Parabox,패러박스 website,Sito web di Parabox,Parabox 公式サイト,Site do Parabox,Веб-сайт игры Parabox,《帕特里克的箱子无穷奇遇》网站
+Menu_GameItchForum,Parabox itch.io forum,Parabox-Forum itch.io,Foro de Parabox en itch.io,Forum itch.io de Parabox,패러박스 itch.io forum,Forum itch.io di Parabox,Parabox itch.io フォーラム,Fórum do Parabox no itch.io,Форум игры Parabox на itch.io,《帕特里克的箱子无穷奇遇》itch.io 论坛
+Menu_GameSteamForum,Parabox Steam forum,Parabox-Forum Steam,Foro de Parabox en Steam,Forum Steam de Parabox,패러박스 Steam forum,Forum Steam di Parabox,Parabox Steam フォーラム,Fórum do Parabox no Steam,Форум игры Parabox на Steam,《帕特里克的箱子无穷奇遇》Steam 论坛
+Menu_DevWebsite,Developer website,Entwickler-Website,Sitio web de los desarrolladores,Site web du développeur,개발자 웹사이트,Sito web dello sviluppatore,開発者ウェブサイト,Site do desenvolvedor,Веб-сайт разработчика,开发者网站
+Menu_MailingList,Developer mailing list,Mailingliste der Komponistin,Lista de correo de los desarrolladores,Liste de diffusion du développeur,메일링 리스트,Mailing list dello sviluppatore,メーリングリスト,Lista de e-mails do desenvolvedor,Список рассылки,邮件列表
+Menu_ComposerWebsite,Composer website,Website der Komponistin,Sitio web de la compositora,Site web du compositeur,작곡가 웹사이트,Sito web della compositrice,作曲者ウェブサイト,Site da compositora,Веб-сайт композитора,作曲者网站
+Menu_BuySoundtrack,Buy soundtrack,Soundtrack kaufen,Comprar banda sonora,Acheter la bande-son,사운드트랙 구매,Acquista la colonna sonora,サウンドトラックを購入,Comprar trilha sonora,Купить саундтрек,购买原声
+Menu_CustomLevels,Custom levels,Eigene Level,Niveles personalizados,Niveaux personnalisés,커스텀 레벨,Livelli personalizzati,カスタムステージ,Fases personalizadas,Пользовательские уровни,自定义关卡
+Menu_CustomLevelsInstructions,"No custom levels found.
+
+For setup instructions,
+see this webpage, or
+the game's files.","Keine eigenen Level gefunden.
+
+Hinweise zur Einrichtung findest du auf
+dieser Website oder
+in den Spieldateien.","No se han encontrado niveles personalizados.
+
+Para más información sobre cómo configurarlos,
+consulta esta página web
+o los archivos del juego.","Aucun niveau personnalisé trouvé.
+
+Pour consulter les instructions d'installation,
+consultez cette page web ou
+les fichiers du jeu.","커스텀 레벨이 없습니다.
+
+설정 방법은
+웹페이지나
+게임 파일을 확인하세요.","Non è stato trovato alcun livello personalizzato.
+
+Per saperne di più sulle istruzioni per l'installazione,
+visita questa pagina web o
+i file del gioco.","カスタムステージが見つかりませんでした。
+
+セットアップの方法については、
+こちらのウェブページか
+ゲームのファイルをご覧ください。","Nenhuma fase personalizada encontrada.
+
+Para ver as instruções de configuração,
+acesse esta página ou
+os arquivos do jogo.","Пользовательские уровни не найдены.
+
+Инструкции по установке
+можно найти на этой веб-странице
+или в файлах игры.","未找到自定义关卡。
+
+如要查看设置说明，
+请查看此网页或
+游戏中的文件。"
+Menu_CustomLevelsWebpage,Instructions webpage,Hinweis-Website,Página web con instrucciones,Page web d'instructions,방법 설명 웹페이지,Pagina web delle istruzioni,説明ウェブページ,Página de instruções,Веб-страница с инструкциями,说明网页
+Menu_CustomLevelsError,Error when loading custom level,Fehler beim Laden eines eigenen Levels,Error al cargar el nivel personalizado,Erreur lors du chargement d'un niveau personnalisé,커스텀 레벨을 불러오는 중 오류,Errore nel caricamento del livello personalizzato,カスタムステージの読み込み中にエラー,Erro ao carregar fase personalizada,Ошибка при загрузке пользовательского уровня,载入自定义关卡时出错
+Menu_Quit,Quit,Beenden,Salir,Quitter,종료,Esci,終了,Sair,Выход,退出
+Menu_Controls,Controls,Steuerung,Controles,Commandes,컨트롤,Controlli,操作方法,Controles,Управление,控制
+Menu_KeyboardControls,Keyboard controls,Tastatursteuerung,Controles del teclado,Commandes clavier,키보드 컨트롤,Controlli della tastiera,キーボードの操作,Controles do teclado,Управление с клавиатуры,键盘控制
+Menu_GamepadControls,Gamepad controls,Controllersteuerung,Controles del mando,Commandes manette,게임패드 컨트롤,Controlli del gamepad,ゲームパッドの操作,Controles do gamepad,Управление с геймпада,手柄控制
+Menu_PressAKey,Press a key,Drücke eine Taste,Pulsa una tecla,Appuyez sur une touche,키 입력,Premi un tasto,キーを押してください,Pressione uma tecla,Нажмите клавишу,按一个按键
+Menu_PressAButton,Press a button,Drücke eine Taste,Pulsa un botón,Appuyez sur un bouton,버튼 입력,Premi un pulsante,ボタンを押してください,Pressione um botão,Нажмите кнопку,按一个按钮
+Menu_ResetControls,Reset all controls,Steuerung komplett zurücksetzen,Reiniciar todos los controles,Réinitialiser toutes les commandes,모든 컨트롤 초기화,Reimposta tutti i comandi,すべての操作をリセット,Redefinir todos os controles,Сбросить настройки управления,重置所有控制
+Menu_Recurse,Recurse,Rekursion,Recursión,Récursion,반복,Ricorso,再帰,Recursividade,Рекурсия,递归
+Menu_ExtraFeatures,Bonus features,Bonusinhalte,Características adicionales,Fonctionnalités bonus,보너스 기능,Funzionalità bonus,ボーナス機能,Recursos bônus,Бонусные функции,花絮
+Menu_Tips,Tips,Tipps,Consejos,Astuces,팁,Suggerimenti,ヒント,Dicas,Подсказки,窍门
+Menu_SlowMotion,Slow motion {0},Zeitlupe {0},Ralentizar {0},Ralenti {0},슬로우 모션 {0},Rallentatore {0},スローモーション{0},Câmera lenta {0},Замедленное движение: {0},慢动作 {0} 倍
+Menu_ChangeVisualStyle,Change visual representation,Visuelle Darstellung ändern,Cambiar representación visual,Modifier la représentation visuelle,그래픽 표현 변경,Cambia la rappresentazione della visuale,ビジュアル表現を変更,Alterar representação visual,Сменить графический стиль,更改视觉表现
+Menu_ChangeColors,Change colors,Farben ändern,Cambiar colores,Changer les couleurs,색상 변경,Cambia colori,色を変更,Alterar cores,Изменить цвета,更改颜色
+Menu_BreakMusic,Select music,Musikauswahl,Seleccionar música,Sélectionner la musique,음악 선택,Seleziona musica,音楽を選択,Selecionar música,Выбрать музыку,选择音乐
+Menu_XSolved,{0} solved,{0} gelöst,Has completado: {0},{0} résolu,{0} 해결 완료,{0} risolti,完了数: {0},{0} resolvido,Решенные головоломки: {0},已破解 {0} 个
+Menu_XOfYSolved,{0} / {1} solved,{0} / {1} gelöst,Completados: {0}/{1},{0} / {1} résolu(s),{0} / {1} 해결 완료,{0} / {1} risolti,完了数: {0}/{1},{0}/{1} resolvido(s),Решенные головоломки: {0}/{1},已破解 {0} 个 / 共 {1} 个
+Setting_MusicVolume,Music volume,Musiklautstärke,Volumen de la música,Volume de la musique,음악 볼륨,Volume della musica,BGMの音量,Volume da música,Громкость музыки,音乐音量
+Setting_SoundVolume,Sound volume,Klanglautstärke,Volumen del sonido,Volume des sons,사운드 볼륨,Volume del suono,効果音の音量,Volume do som,Громкость звука,声音音量
+Setting_Grid,Grid,Gitternetz,Cuadrícula,Grille,그리드,Griglia,グリッド,Grade,Сетка,网格
+Setting_Particles,Particles,Partikel,Partículas,Particules,입자,Particelle,パーティクル,Partículas,Частицы,粒子
+Setting_RepeatInputDelay,Repeat input delay,Eingabeverzögerung (bei Wiederholung),Repetir retraso de pulsación,Délai de répétition de saisie,반복 입력 딜레이,Ritardo per gli input ripetuti,再入力遅延,Atraso de entrada repetida,Задержка перед повторным откликом,重复输入延迟
+Setting_RepeatInputDelayNumber,{0}ms,{0} ms,{0} ms,{0} ms,{0}ms,{0}ms,{0}ms,{0} ms,{0} мс,{0} 毫秒
+Setting_RepeatInputDelayOff,Off,Aus,Desactivado,Off,끄기,Off,OFF,Desativado,Выкл.,关
+Setting_EnterSpeed,Enter speed,Tempo bei Betreten,Introducir velocidad,Vitesse d'entrée,입장 속도,Velocità d'accesso,箱入り速度,Velocidade de entrada,Скорость входа,进入速度
+Setting_AllowRapidInputs,Allow rapid inputs,Schnelle Eingaben erlauben,Permitir pulsaciones rápidas,Activer la réponse rapide,빠른 입력 허용,Permetti input rapidi,高速入力の有効化,Permitir entradas rápidas,Разрешить быстрый ввод,允许快速输入
+Setting_InstantZoom,Instant camera zoom,Sofort-Zoom,Zoom instantáneo de la cámara,Zoom de caméra instantané,즉시 카메라 줌,Zoom della telecamera istantaneo,即時カメラズーム,Zoom de câmera instantâneo,Мгновенное сближение камеры,即时镜头缩放
+Setting_Vsync,Vsync,Vsync,Sincronización vertical,Vsync,수직 동기화,Vsync,垂直同期,Sincronização vertical,Вертикальная синхронизация,Vsync
+Setting_Resolution,Resolution,Auflösung,Resolución,Résolution,해상도,Risoluzione,解像度,Resolução,Разрешение,分辨率
+Setting_Fullscreen,Fullscreen,Vollbild,Pantalla completa,Plein écran,전체 화면,Schermo intero,フルスクリーン,Tela cheia,Полноэкранный режим,全屏
+Setting_UnlockPuzzles,Unlock all puzzles,Alle Rätsel freischalten,Desbloquear todos los rompecabezas,Débloquer tous les casse-têtes,모든 퍼즐 해제,Sblocca tutti i rompicapi,全パズルのアンロック,Desbloquear todos os quebra-cabeças,Разблокировать все головоломки,解锁所有谜题
+Setting_UnlockPuzzlesNote,"Note: You can turn this setting
+on and off at any time","Hinweis: Du kannst diese Einstellung
+jederzeit (de-)aktivieren","Nota: puedes activar o desactivar
+esta opción en cualquier momento.","Remarque : Vous pouvez activer ou désactiver
+ce paramètre à tout moment","참고: 이 설정은 언제든
+켜고 끌 수 있습니다","Attenzione: puoi attivare e disattivare
+questa impostazione in qualsiasi momento","注: この設定のON/OFFは
+いつでも切り替えられます","Observação: você pode ativar/desativar
+esta configuração quando quiser","Примечание: эту настройку можно
+включить или выключить в любой момент","注：你可随时
+开启和关闭此设置"
+Setting_RandomizeVisuals,"Random puzzle
+orientation and colors","Zufällige Rätsel-
+orientierung und -farben","Orientación y colores aleatorios
+de los rompecabezas","Orientation et couleurs
+de casse-tête aléatoires","무작위 퍼즐
+방향 및 색상","Orientamento e colori
+casuali per il rompicapo","パズルの色と向きの
+ランダム化","Cores e orientação
+aleatórias de quebra-cabeça","Случайные цвета
+и поворот головоломки","随机谜题
+方向和颜色"
+Setting_RandomizeMusic,Random music,Zufällige Musik,Música aleatoria,Musique aléatoire,무작위 음악,Musica casuale,音楽のランダム化,Música aleatória,Случайный выбор музыки,随机音乐
+Setting_RandomizeInfo,"(these may be fun for
+a second playthrough)","(Das könnte beim
+Wiederspielen Spaß machen)","(puede ser divertido
+tras completar el juego)","(cela peut-être amusant
+pour rejouer au jeu)","(두 번째 플레이할 때
+재미있을 수 있습니다)","(opzioni che potrebbero essere divertenti
+per chi ha già finito il gioco una volta)","（2週目以降も
+新鮮な気分で楽しめます）","(estas opções podem ser divertidas
+para terminar o jogo outra vez)","(при втором прохождении
+это может быть весело)","（重播一遍
+也许会很有意思）"
+Control_Move,Move,Bewegen,Movimiento,Se déplacer,이동,Spostati,移動,Mover,Передвижение,移动
+Control_Up,Up,Hoch,Arriba,Haut,위,Sopra,上,Para cima,Вверх,向上
+Control_Down,Down,Runter,Abajo,Bas,아래,Sotto,下,Para baixo,Вниз,向下
+Control_Left,Left,Links,Izquierda,Gauche,왼쪽,Sinistra,左,Esquerda,Влево,向左
+Control_Right,Right,Rechts,Derecha,Droite,오른쪽,Destra,右,Direita,Вправо,向右
+Control_Undo,Undo,Rückgängig,Deshacer,Annuler,실행 취소,Annulla,一手戻す,Desfazer,Отменить,取消操作
+Control_Redo,Redo,Wiederherstellen,Rehacer,Refaire,다시 실행,Ripeti,一手戻すの取り消し,Refazer,Вернуть,重新操作
+Control_ResetPuzzle,Reset puzzle,Rätsel zurücksetzen,Reiniciar rompecabezas,Réinitialiser le casse-tête,퍼즐 초기화,Ripristina rompicapo,パズルをリセット,Redefinir quebra-cabeça,Сбросить головоломку,重置谜题
+Control_UndoAReset,Note: You can undo a reset,Hinweis: Eine Zurücksetzung kann rückgängig gemacht werden,Nota: los reinicios se pueden deshacer.,Remarque : vous pouvez annuler une réinitialisation,참고: 초기화도 실행 취소할 수 있습니다,Attenzione: puoi annullare un ripristino,注: リセットも元に戻せます,Observação: você pode desfazer uma redefinição,Примечание: сброс можно отменить,注：重置可以取消
+Control_Menu,Menu,Menü,Menú,Menu,메뉴,Menu,メニュー,Menu,Меню,菜单
+Control_ZoomIn,Zoom in/out,Rein-/Rauszoomen,Acercar/alejar,Zoom avant/arrière,줌 인/아웃,Zoom +/-,ズームイン/アウト,Ampliar/reduzir,Приблизить/отдалить,放大/缩小
+Control_Confirm,Confirm,Bestätigen,Confirmar,Confirmer,확인,Conferma,決定,Confirmar,Подтвердить,确认
+Control_StartGame,Start game,Spiel Starten,Comenzar juego,Démarrer la partie,게임 시작,Avvia partita,ゲーム開始,Iniciar jogo,Начать игру,开始游戏
+Control_Cancel,Cancel,Abbrechen,Cancelar,Annuler,취소,Annulla,キャンセル,Cancelar,Отмена,取消
+Control_ResetControl,Reset control,Steuerung zurücksetzen,Reiniciar controles,Réinitialiser les commandes,컨트롤 초기화,Reimposta il comando,操作をリセット,Redefinir controles,Вернуть настройки управления по умолчанию,重置控制
+SaveFile_FileEmpty,#{0}: Empty,#{0}: Leer,N.º {0}: vacío,#{0} : Vide,#{0}: 비었음,#{0}: vuoto,#{0}: なし,#{0}: vazio,№ {0}: пусто,#{0}：空
+SaveFile_FileNormal,"#{0}: {1} solved, {2}","#{0}: {1} gelöst, {2}","N.º {0}: {1} completado(s), {2}","#{0} : {1} résolu, {2}","#{0}: {1} 해결 완료, {2}","#{0}: {1} risolto/i, {2}","#{0}: {1}完了, {2}","#{0}: {1} resolvido(s), {2}","№ {0}: решено {1}, {2}",#{0}：已破解 {1} 个，游戏时间 {2}
+SaveFile_FileClear,"#{0}: {1} solved, {2}, end","#{0}: {1} gelöst, {2}, Ende","N.º {0}: {1} completado(s), {2}, fin","#{0} : {1} résolu(s), {2}, fin","#{0}: {1} 해결 완료, {2}, 끝","#{0}: {1} risolto/i, {2}, fine","#{0}: {1}完了, {2}, クリア","#{0}: {1} resolvido(s), {2}, fim","№ {0}: решено {1}, {2}, конец",#{0}：已破解 {1} 个，游戏时间 {2}，结尾
+SaveFile_FileAllClear,"#{0}: {1} solved, {2}, 100%","#{0}: {1} gelöst, {2}, 100%","N.º {0}: {1} completado(s), {2}, 100 %","#{0} : {1} résolu, {2}, 100 %","#{0}: {1} 해결 완료, {2}, 100%","#{0}: {1} risolto/i, {2}, 100%","#{0}: {1}完了, {2} 100%","#{0}: {1} resolvido(s), {2}, 100%","№ {0}: решено {1}, {2}, 100%",#{0}：已破解 {1} 个，游戏时间 {2}，100%
+SaveFile_Erase,Delete a save file,Einen Spielstand löschen,Eliminar un archivo de guardado,Supprimer un fichier de sauvegarde,저장 파일 삭제,Elimina un salvataggio,セーブファイルを削除,Excluir jogo salvo,Удалить файл сохранения,删除存档文件
+SaveFile_EraseConfirm,Delete this file?,Diese Datei löschen?,¿Eliminar este archivo?,Supprimer ce fichier ?,이 파일을 삭제하시겠습니까?,Vuoi eliminare questo salvataggio?,このファイルを削除しますか？,Excluir este jogo?,Удалить этот файл?,是否删除此文件？
+SaveFile_EraseConfirm2,Are you sure?,Bist du sicher?,¿Seguro?,Confirmer ?,계속하시겠습니까?,Confermi?,よろしいですか？,Tem certeza?,Вы уверены?,是否确定？
+SaveFile_EraseConfirmNo,No,Nein,No,Non,아니요,No,いいえ,Não,Нет,否
+SaveFile_EraseConfirmYes,Yes,Ja,Sí,Oui,예,Sì,はい,Sim,Да,是
+Tip_TheseAreTipsWorld,These are some general puzzle-solving tips that I find useful! You can also access these at any time in the menu under Extras -> Tips.,"Dies sind allgemeine Rätsellösungshilfen, die ich nützlich finde! Du kannst jederzeit im Menü unter Extras -> Tipps auf sie zugreifen.","¡Tengo algunos consejos que te ayudarán a resolver los rompecabezas! Si lo prefieres, puedes acceder a estos consejos en cualquier momento desde el menú > Contenido adicional > Consejos.",Voici quelques astuces générales que je trouve utiles pour résoudre les casse-têtes ! Vous pouvez également y accéder à tout moment dans le menu Suppléments -> Astuces.,이것은 유용한 일반적인 퍼즐 해결 팁입니다! 엑스트라 -> 팁 메뉴에서 언제든 확인할 수 있습니다.,"Questi sono dei suggerimenti generali utili per risolvere i rompicapi! Puoi accedervi in qualsiasi momento nel menu, sezione Extra -> Suggerimenti.",これは、開発者が使えると思うパズル解きのヒントです。こうしたヒントは、メニューの「エクストラ」→「ヒント」でいつでも確認できます。,"Tem algumas dicas gerais para resolver quebra-cabeças que considero úteis! Acesse-as quando quiser no menu, em Extras -> Dicas.","Это общие подсказки по решению головоломок. Мне кажется, они могут вам пригодиться! Вы в любой момент можете открыть их в меню в разделе «Дополнительно -> Подсказки».",这些是我认为很有用的一些通用解谜窍门！你还可在菜单中访问附加内容 -> 窍门，随时查看这些内容。
+Tip_TheseAreTipsMenu,"These are some general
+puzzle-solving tips that I
+find useful.","Dies sind allgemeine
+Rätsellösungshilfen, die ich
+nützlich finde!","¡Tengo algunos consejos
+que te ayudarán
+a resolver los rompecabezas!","Voici quelques astuces générales 
+que je trouve utiles
+pour résoudre les casse-têtes.","이것은 유용한
+일반적인 퍼즐 해결
+팁입니다.","Questi sono dei suggerimenti
+generali utili per risolvere
+i rompicapi.","これは、開発者が
+使えると思うパズル解きの
+ヒントです。","Aqui estão algumas dicas gerais
+de solução de quebra-cabeças que eu
+acho úteis.","Это общие подсказки
+по решению головоломок. Мне
+кажется, они могут вам пригодиться!","这些是我认为很有用的一些通用
+解谜窍门
+。"
+Tip_Undo,"Undo, Redo, and Reset are useful tools. Don't be afraid to use them often!","Rückgängig, Wiederherstellen und Zurücksetzen sind sehr nützliche Werkzeuge. Hab keine Angst, sie oft einzusetzen!","Las opciones Deshacer, Rehacer y Reiniciar son muy útiles. ¡No dudes en usarlas!","Annuler, Refaire et Réinitialiser sont des outils utiles. N'hésitez pas à les utiliser souvent !","실행 취소, 다시 실행, 초기화는 유용한 도구입니다. 자주 사용하세요!","Annulla, Ripeti e Ripristina sono degli strumenti utili. Non avere paura di usarli spesso!",一手戻す、その取り消し、リセットはとても便利です。ガンガン活用しましょう！,"Desfazer, Refazer e Redefinir são ferramentas úteis. Não tenha medo de usá-las com frequência!","Кнопки «Отменить», «Вернуть» и «Сбросить» очень полезны. Не бойтесь использовать их как можно чаще!",取消操作、重新操作和重置都是很有用的工具。记得经常使用，不要有负担！
+Tip_WorkBackwards,"It can be helpful to imagine how the puzzle would look when solved, and work backwards from there.","Es kann hilfreich sein, sich das gelöste Rätsel vorzustellen und von da aus rückwärts zu arbeiten.",También puedes probar a imaginarte cómo sería el rompecabezas una vez terminado para saber qué movimientos tienes que dar.,"Il peut être utile d'imaginer à quoi ressemblerait le casse-tête une fois résolu, puis de réfléchir à l'envers à partir de là.",퍼즐을 풀고 나면 어떤 모양일지 상상하며 거기에서 뒤로 추적하세요.,Potrebbe essere utile immaginare che aspetto avrebbe il rompicapo una volta risolto e lavorare al contrario.,パズルが解けた時の状態をイメージして、そこから逆算して進めるといいでしょう。,Talvez ajude imaginar como o quebra-cabeça ficaria depois de solucionado e fazer o processo reverso.,"Идея, которая может помочь: представьте, как будет выглядеть решенная головоломка, а затем продумайте в обратном порядке действия, которые могут привести к такому виду.",可以想象一下谜题破解后会是什么样子，然后由此倒推。
+Tip_NarrowOptions,"Figuring out things that don't work can be helpful, to narrow down your options.","Herauszufinden, was nicht funktioniert, kann helfen, weil es die Auswahl an Optionen reduziert.","Otra opción es pensar en todas las opciones que no te sirven, ¡así tendrás menos entre las que elegir!",Identifier les choses qui ne marchent pas peut être utile pour réduire vos choix.,작동하지 않는 걸 알아내는 것도 유용할 수 있으니 계속 선택지를 좁혀가세요.,Anche scoprire cosa non funziona può essere utile per ridurre le opzioni.,何が上手くいかないかを把握することは、選択肢を狭めるのに役立ちます。,Descobrir o que não funciona e reduzir suas opções pode ajudar.,Ошибки тоже полезны: они помогают отбросить нерабочие варианты и сузить выбор.,搞清楚哪些法子行不通也是有用的，可以为你缩小选择范围。
+Tip_TryAnotherPuzzle,Trying a different puzzle and coming back later can give you a fresh view if you're stuck.,"Wenn du zwischendurch ein anderes Rätsel angehst und später wiederkommst, hast du einen frischen Blick auf das Problem.","Si no consigues avanzar, puedes intentar primero otro rompecabezas y volver a ese que se te resiste más tarde. ¡Así lo verás con otros ojos!","Si vous bloquz sur un casse-tête, essayez-en un autre et revenez-y plus tard. Cela peut vous donner de nouvelles idées.",다른 퍼즐을 풀어본 뒤 다시 돌아오면 새로운 시선으로 퍼즐을 풀 수 있습니다.,"Se si è bloccati su un rompicapo, provarne un altro e tornare più tardi al primo potrebbe offrire un'ottica diversa.",困ったときには、別のパズルに挑戦したり、後で再挑戦するのもありです。新たな視点が得られるかもしれません。,Não avança? Tente resolver outro quebra-cabeça e volte mais tarde para ter uma nova perspectiva.,"Зашли в тупик? Попробуйте решить другую головоломку и вернуться позже, чтобы посмотреть на задачу свежим взглядом.",如果被卡住了，不妨试着换个别的谜题，稍后再来破解，能让你获得全新的视野。
+Tip_Challenging,The puzzles are meant to be challenging. There is no expectation of solving them quickly!,"Diese Rätsel sollen schwierig sein. Niemand erwartet, dass du sie schnell löst!","Los rompecabezas son difíciles, ¡así que no tienes por qué resolverlos rápido!",Les casse-têtes sont censés représenter un défi. Ne vous attendez pas à pouvoir les résoudre rapidement !,퍼즐은 원래 어렵게 만들어져 있습니다. 빨리 풀 수는 없을 겁니다!,I rompicapi sono fatti per essere complessi. Non aspettarti di risolverli velocemente!,パズルは手応えのあるように作られています。早解きできるものではありません！,Quebra-cabeças são desafiadores. Não espere resolvê-los rapidamente!,"Головоломки и должны быть сложными. Предполагается, что над ними нужно подольше подумать, не расстраивайтесь, если не получилось быстро найти решение!",谜题都有挑战性。不要期望速战速决！
+Sign_Congratulations,"Congratulations on
+reaching the end!
+
+Thank you for playing! :)","Glückwunsch zum
+Erreichen des Endes!
+
+Danke fürs Spielen! :)","¡Enhorabuena por llegar
+hasta el final!
+
+¡Gracias por jugar! :)","Félicitations, vous avez
+atteint la fin du jeu !
+
+Merci d'avoir joué ! :)","끝까지 도달하신 것을
+축하드립니다!
+
+즐겨주셔서 감사합니다! ^^","Congratulazioni per
+aver raggiunto la fine!
+
+Grazie per aver giocato! :)","終点への到達
+おめでとうございます！
+
+プレイしてくださり、ありがとうございます！","Parabéns por
+chegar ao fim!
+
+Agradecemos por ter jogado! :)","Поздравляю,
+вы добрались до конца!
+
+Спасибо, что сыграли! :)","恭喜你
+抵达终点！
+
+感谢你体验游戏！:)"
+Sign_100Percent,"Congratulations on solving
+all the puzzles!
+
+Thank you for playing! :)","Glückwunsch zum Lösen
+aller Rätsel!
+
+Danke fürs Spielen! :)","¡Enhorabuena por resolver
+todos los rompecabezas!
+
+¡Gracias por jugar! :)","Félicitations, vous avez
+résolu tous les casse-têtes !
+
+Merci d'avoir joué ! :)","모든 퍼즐을 푸신 걸
+축하드립니다!
+
+즐겨주셔서 감사합니다! ^^","Congratulazioni per
+aver risolto tutti i rompicapi!
+
+Grazie per aver giocato! :)","全パズルのクリア
+おめでとうございます！
+
+プレイしてくださり、ありがとうございます！","Parabéns por solucionar
+todos os quebra-cabeças!
+
+Agradecemos por ter jogado! :)","Поздравляю,
+вы решили все головоломки!
+
+Спасибо, что сыграли! :)","恭喜你
+破解所有谜题！
+
+感谢你体验游戏！:)"
+DemoEnd_ThankYou,Thank you for playing the demo of Patrick's Parabox! :),"Danke, dass du die Demo zu Patricks Parabox gespielt hast! :)",¡Gracias por jugar a la versión de prueba de La paracaja de Patrick! :),Merci d'avoir joué à la démo de La paraboîte de Patrick ! :),패트릭의 패러박스 데모를 플레이해주셔서 감사합니다!,Grazie per aver giocato la demo de Il Paradosso di Patrick! :),Patrick's Paraboxのデモ版をプレイしてくださり、ありがとうございます！,Agradecemos por ter jogado a demonstração do Patrick's Parabox! :),"Спасибо, что сыграли в демоверсию игры Patrick's Parabox! :)",感谢你体验《帕特里克的箱子无穷奇遇》的演示版！:)
+DemoEnd_FullGame,"The full game gradually reveals many more mechanics and recursive twists as you delve deeper into the system, and features over 350 hand-crafted puzzles which each have a new idea.","In der Vollversion werden nach und nach weitere Mechaniken und rekursive Wendungen enthüllt, während du tiefer in das System eintauchst. Insgesamt bietet sie über 350 handgemachte Rätsel, von denen jedes auf einer neuen Idee beruht.","El juego va revelando las mecánicas de juego y los giros recursivos conforme vas avanzando en el sistema. Además, cuenta con más de 350 rompecabezas diseñados a mano, ¡y cada uno añade una idea nueva!","Le jeu complet révèle plus de mécanismes et de variantes récursives au cours de votre progression, et propose plus de 350 casse-têtes conçus à la main offrant chacun une nouvelle idée.",정식 버전에는 더 많은 시스템과 반전이 준비되어 있습니다. 350개 퍼즐에서 각각 새로운 아이디어가 기다립니다.,"Il gioco completo rivela gradualmente sempre più meccaniche e svolte ricorrenti man mano che ci si addentra nel sistema. Include più di 350 rompicapi realizzati a mano, ognuno con una nuova idea.",製品版では、システムを深く掘り下げていくことで、より多くの仕組みが徐々に明らかになっていきます。また、それぞれが新しいアイデアを取り入れた、350以上のパズルが用意されています。,"O jogo completo revela gradualmente várias outras mecânicas e truques recursivos conforme você explora o sistema, além de ter mais de 350 quebra-cabeças, cada um com uma ideia diferente.","В полной версии игры куда больше механик и рекурсий, постепенно открывающихся по мере прохождения больше чем 350 созданных вручную головоломок, каждая из которых посвящена новой идее.",在你不断深入系统的过程中，完整版游戏会逐步揭示更多机制和循环曲折，并有 350 多个人工打造的谜题，其中每个都蕴含着新的创意。
+DemoEnd_Follow,"If you enjoyed the demo, the full game is available for purchase now!",Wenn dir die Demo gefallen hat: Die Vollversion ist jetzt zum Kauf erhältlich!,"Si te ha gustado la versión de prueba, ¡ya puedes hacerte con la versión completa!","Si vous avez aimé la démo, le jeu complet est disponible à l'achat dès maintenant !",데모가 재미있었다면 정식 버전을 구매하세요!,"Se ti è piaciuta la demo, puoi subito acquistare il gioco completo!",デモ版をお楽しみいただけたなら、今すぐ製品版を購入することも可能です！,"Se gostou da demonstração, o jogo completo já está disponível para compra!","Понравилась демоверсия? Помните, что вы уже можете купить и полную версию!",如果你已体验过演示版，完整版游戏现已发售！
+DemoEnd_Store,Steam store page,Steam,Steam,Steam,Steam,Steam,Steam,Steam,Steam,Steam
+Gallery_About,Here are a few images from the game's development.,Hier sind ein paar Bilder aus der Entwicklungsphase des Spiels.,Aquí tienes algunas imágenes del desarrollo del juego.,Voici quelques images du développement du jeu.,다음은 게임 개발과 관련된 이미지입니다.,Ecco alcune immagine dal periodo dello sviluppo del gioco.,ここでは、ゲーム開発中の画像をご紹介します。,Confira algumas imagens do desenvolvimento do jogo.,"Вот кое-какие изображения, которые дадут представление о процессе разработки игры.",以下是展现游戏开发过程的一些图片。
+Gallery_Mockup,The initial sketch of the game idea; it would be a stealth puzzle game where you sneak inside of walls and blocks.,"Die Ursprungsskizze der Spielidee als Stealth-Rätselspiel, in dem man in Mauern und Blöcke schleicht.","El boceto inicial de la idea del juego: queríamos crear un rompecabezas de sigilo, ¡en él, tenías que moverte entre las paredes y los bloques!",L'esquisse initiale de l'idée du jeu : il s'agissait d'un jeu de réflexion furtif où vous vous faufiliez à l'intérieur des murs et des blocs.,최초 게임 아이디어 스케치입니다. 벽과 블록 사이로 몰래 돌아다녀야 하는 잠입 퍼즐 게임을 만들 생각이었습니다.,Il bozzetto iniziale dell'idea del gioco. Era un gioco a rompicapi furtivo dove ci si intrufolava in muri e blocchi.,最初のスケッチでは、壁やブロックの中に忍び込むステルスパズルゲームとなっていました。,Concepção inicial do jogo; um jogo de quebra-cabeças e furtividade. O objetivo era entrar sorrateiramente em paredes e blocos.,"Изначальный набросок с идеей игры. Я представлял себе нечто типа стелс-головоломки, где нужно забираться в стены и блоки.",游戏创意的最初草图；当时是一款潜行解谜游戏，你需要偷偷潜入墙和障碍物内部。
+Gallery_MultipleLayers,"A randomly generated test level; at this point, you could transfer between boxes, but not enter or exit them.","Ein zufällig generiertes Testlevel. Zu diesem Zeitpunkt konnte man sich zwischen Boxen transferieren, sie aber nicht betreten oder verlassen.","Un nivel de prueba generado de forma aleatoria: en este punto, podías transferir cajas, pero nada de salir o entrar de ellas.","Un niveau de test généré de manière aléatoire : à ce stade, vous pouviez vous déplacer entre les boîtes, mais pas y entrer ou en sortir.","무작위로 만든 테스트 레벨입니다. 이 시점에서는 상자의 위치를 맞바꾸기만 하고, 상자 안에 들어가거나 나오는 건 없었습니다.","Un livello di prova generato casualmente. A questo punto ci si poteva trasferire tra le scatole, ma non era possibile entrarci o uscirci.",ランダムに生成されたテストステージ。この時点では、箱の間の移動はできても、箱への出入りはできません。,"Uma fase de teste gerada aleatoriamente. Nessa fase, era possível passar de uma caixa para outra, mas não sair ou entrar em nenhuma delas.","Сгенерированный случайным образом тестовый уровень. На этом этапе можно переходить от коробки к коробке, но нельзя входить в коробки и выходить из них.",随机生成的测试关卡；此时，你可以在箱子之间转移，但无法进入或退出箱子。
+Gallery_Ref,"A test level of a box containing itself, which was an idea adapted from the game Sokosoko by juner.","Ein Testlevel einer Box, die sich selbst beinhaltet. Die Idee stammt aus dem Spiel Sokosoko von juner.",Un nivel de prueba con una caja dentro de sí misma: una idea que adaptamos del juego Sokosoko de juner.,"Un niveau de test d'une boîte se contenant elle-même, qui était une idée adaptée du jeu Sokosoko de juner.","박스가 자신 안에 들어가는 테스트 레벨로, juner의 Sokosoko에서 영감을 받아 채용한 아이디어입니다.","Un livello di prova di una scatola che contiene se stessa, un'idea adottata dal gioco Sokosoko di juner.",箱の中に箱を入れるテストステージ。juner氏の『Sokosoko』から着想を得ました。,Uma fase de teste com uma caixa dentro de si. Foi uma ideia adaptada do jogo Sokosoko de juner.,"Тестовый уровень с коробкой внутри самой себя. Идею я взял из игры Sokosoko, созданной juner.",箱子包含自身的测试关卡，这个创意根据 juner 开发的游戏《Sokosoko》改编。
+Gallery_NotebookMath,Notes on the math for enter and exit animations.,Notizen zur Mathematik der Betreten- und Verlassen-Animationen.,Notas sobre los números de las animaciones para entrar y salir de las cajas.,Notes sur les mathématiques des animations d'entrée et de sortie.,들어가고 나가는 애니메이션 관련 수학 노트입니다.,Appunti dei calcoli per le animazioni di entrata e uscita.,箱の出入りのアニメーション計算に関するメモ。,Observações sobre a matemática usada nas animações de entrar e sair.,Заметки о расчетах для анимации входа и выхода.,进入和退出动画的数学计算笔记。
+Gallery_Graph,"One of many edge case testing levels, and also a visualization of the structure of boxes",Eines der vielen Grenzfall-Testlevel und eine Visualisierung der Boxstruktur.,"Uno de los muchos niveles de prueba de casos extremos, además de un vistazo de la estructura de las cajas.","Un des nombreux niveaux pour tester les cas limites, ainsi qu'une visualisation de la structure des boîtes.",가장자리 케이스 테스트 레벨 중 하나와 상자 구조 시각화 이미지입니다.,Uno dei tanti livelli di prova con casi limite e una visualizzazione della struttura delle scatole.,多くのエッジケーステストステージの1つであり、箱の構造を視覚化したものでもあります。,Uma das várias fases de teste de limites e também uma visualização da estrutura das caixas,Один из множества уровней с тестированием границ. Также дает представление о структуре коробок.,众多的极端情况测试关卡之一，也是多个箱子组成的结构的视觉化呈现
+Gallery_Rotate,A sketch for recursive boxes rotated by 90 degrees. I decided not to implement them due to programming complexity.,"Eine Skizze für rekursive Boxen, die um 90 Grad gedreht sind. Wegen der Programmierkomplexität habe ich sie nicht umgesetzt.",Un boceto de cajas recursivas giradas 90 grados. Preferí no añadirlo debido a la gran complejidad a la hora de programarlo.,"Un croquis pour des boîtes récursives tournées à 90 degrés. J'ai décidé de ne pas les implémenter, en raison des difficultés de programmation.",반복되는 상자의 90도 회전 버전 스케치입니다. 프로그램 난이도가 너무 올라가서 채택하지 않았습니다.,Un bozzetto per delle scatole ricorrenti ruotate di 90 gradi. Ho deciso di non implementarle a causa della complessità della programmazione.,90度回転した再帰的な箱の草案です。プログラミングが複雑になるので、実装するのはやめました。,Um esboço das caixas recursivas com giro de 90 graus. Decidi não implementá-las devido à complexidade para programá-las.,"Набросок рекурсии с коробками и поворотом на 90 градусов. Я решил не использовать эту идею в игре, потому что ее было бы слишком сложно воплотить в коде.",箱子循环旋转 90 度的草图。由于编程过于复杂，我决定放弃。
+Gallery_Stream,A screenshot from a development livestream.,Ein Screenshot eines Entwickler-Livestreams.,Una captura de una retransmisión del desarrollo.,Une capture d'écran d'un streaming de développement en direct.,개발 생중계 중 찍은 스크린샷입니다.,Uno screenshot da una diretta di sviluppo.,開発配信のスクリーンショットです。,Uma captura de tela da transmissão ao vivo de desenvolvimento.,Снимок экрана во время прямого эфира о разработке.,开发网络直播截图。
+Gallery_Clamp,"A bug where drawing was not correctly clamped when a box entered itself, causing lag.","Ein Clamping-Bug, der auftrat und Lag verursachte, wenn eine Box sich selbst betreten sollte.","Un error donde el dibujo no se mostraba correctamente cuando una caja entraba en sí misma, lo que causaba retardos en el juego.","Un bug où le dessin n'était pas fixé correctement lorsqu'une boîte entrait en elle-même, ce qui provoquait un décalage.",상자가 상자 안에 들어갈 때 제대로 그려지지 않아 랙이 발생하는 버그입니다.,Un bug legato a problemi di lag in cui il disegno non era fissato correttamente nel caso in cui una scatola entrasse in se stessa.,箱の中に箱を入れた時に、描画が正しく固定されず、遅延が発生しているバグです。,Uma falha em que o desenho não era restringido corretamente quando uma caixa entrava em si e causava lentidão.,"Ошибка, из-за которой рисунок неправильно сжался, когда коробка входила сама в себя. Ошибка вызвала сбой и задержку.",箱子进入自身后图未正确夹住的漏洞，会导致延迟。
+Gallery_Bug,Another amusing visual bug.,Noch ein unterhaltsamer optischer Bug.,Otro error visual increíble.,Un autre bug visuel amusant.,또 다른 재미있는 그래픽 버그입니다.,Un altro bug visivo divertente.,もうひとつの、視覚的に面白いバグです。,Outra falha visual divertida.,Еще одна интересная ошибка.,另一个令人捧腹的视效漏洞。
+Gallery_Editor,What a puzzle looks like in the editor.,Blick auf ein Rätsel im Editor.,Así son los rompecabezas desde el editor.,Voici à quoi ressemble un casse-tête dans l'éditeur.,에디터에서 본 퍼즐의 모습입니다.,Che aspetto ha un rompicapo nell'editor.,エディター上でのパズルの様子。,Como o quebra-cabeça fica no editor.,Вид головоломки в редакторе.,编辑器视角下的谜题。
+Gallery_Blocks,A generated image of every box in the game!,Ein zusammengestelltes Bild aller Boxen im Spiel!,¡Una imagen generada de todas las cajas del juego!,Une image générée de chaque boîte du jeu !,게임 내의 모든 상자를 그린 이미지입니다!,Un'immagine generata di ogni scatola nel gioco!,ゲーム内のすべての箱の画像を並べてみました！,Uma imagem gerada de todas as caixas no jogo!,Изображение со всеми коробками из игры!,游戏中每个箱子生成的图像！
+Gallery_AreaPuzzles,The puzzles in this area use graphics from early in development.,Die Rätsel in diesem Bereich nutzen Grafiken aus der Frühphase der Entwicklung.,Los rompecabezas de esta zona cuentan con los primeros gráficos del desarrollo.,Les casse-têtes de cette zone utilisent des graphismes datant des débuts du développement.,이 구역의 퍼즐은 개발 초기 그래픽을 사용했습니다.,I rompicapi in quest'area usano delle grafiche delle prime fasi di sviluppo.,このエリアのパズルは、開発初期のグラフィックを使用しています。,Os quebra-cabeças desta área usam gráficos do início do desenvolvimento.,Эти головоломки дают представление о графике на ранних стадиях разработки.,此区域的谜题采用了来自早期开发的图形。
+Credits_AGameBy,a game by,Ein Spiel von,un juego de,un jeu créé par,게임 제작:,un gioco di,開発:,um jogo de,создатель игры:,游戏创作：
+Credits_WithSoundBy,with sound design and music by,Mit Tondesign und Musik von,con diseño de sonidos y música de,avec des sons et musiques conçus par,사운드 디자인 및 음악:,con il design sonoro e la musica di,サウンドデザイン/音楽:,com efeitos sonoros e música de,звукорежиссер и композитор:,声音设计及音乐：
+Credits_Playtesters,Playtesting and wisdom:,Spieltests und Weisheit:,Pruebas y conocimiento:,Test du jeu et conseils :,플레이 테스트 및 조언:,Collaudo e saggezza:,プレイテスト/アドバイス:,Teste de jogo e conhecimento:,Тестирование игры и мудрые советы:,游戏测试及智囊：
+Credits_SpecialThanks,Special thanks:,Besonderer Dank an:,Agradecimientos especiales:,Remerciements particuliers :,특별히 감사한 분들,Ringraziamenti speciali:,スペシャルサンクス:,Agradecimentos especiais:,Особая благодарность:,特别感谢：
+Credits_ThanksEveryone,"Thanks to everyone over the years
+who supported and encouraged me","Dank an alle, die mich über die Jahre
+unterstützt und ermutigt haben","Gracias a todos los que me han apoyado
+y animado a lo largo de los años.","Merci à tous ceux qui m'ont soutenu
+et encouragé au fil des années.","지난 시간 동안 저를 응원해주신
+모든 분들께 감사드립니다","Grazie a tutti coloro che nel corso degli anni
+mi hanno supportato e incoraggiato","長年にわたって私を支え、励ましてくれた
+皆様に感謝します","Agradecemos a todas as pessoas que
+me apoiaram e incentivaram ao longo dos anos","Спасибо всем, кто в течение многих лет
+поддерживал меня и верил в мои идеи","感谢多年来
+支持和鼓励我的每一个人"
+Credits_Unity,Made with Unity by Unity Technologies,Entwickelt mit Unity von Unity Technologies,"Creado con Unity, de Unity Technologies",Conçu avec Unity de Unity Technologies,Unity Technologies의 Unity로 제작했습니다,Realizzato con Unity di Unity Technologies,Made with Unity by Unity Technologies,"Desenvolvido com Unity, da Unity Technologies",Работает на движке Unity от Unity Technologies,采用 Unity Technologies 出品的 Unity 制作
+Credits_Fonts,Fonts:,Schriftarten:,Fuentes:,Polices :,글꼴:,Font:,フォント:,Fontes:,Шрифты:,字体：
+Credits_Resources,Resources:,Ressourcen:,Recursos:,Ressources :,리소스:,Risorse:,リソース:,Recursos:,Ресурсы:,资源：
+Credits_Localization,Localization:,Lokalisierung:,Localización:,Localisation :,현지화:,Localizzazione:,ローカライズ:,Localização:,Локализация:,本地化负责：
