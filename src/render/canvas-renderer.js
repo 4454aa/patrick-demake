@@ -1790,10 +1790,16 @@ export class CanvasRenderer {
     }
 
     const animation = options.animation ?? null;
-    const focusLevel = state.focusBlock.outerLevel;
+    const focusBlock = state.focusBlock;
+    const focusLevel = focusBlock.outerLevel;
     const pixelStep = this.pixelRatio ? 1 / this.pixelRatio : 1;
     const viewport = computeLevelViewport(focusLevel, 0, 0, width, height, 24, 4, pixelStep);
-    this.drawLevel(state, focusLevel, viewport.originX, viewport.originY, viewport.cellSize, animation, 0, new Set([focusLevel.id]));
+
+    // Apply camera flip using horizontal mirror
+    const cameraFlipH = Boolean(this.cameraFlipH);
+    this.withHorizontalMirror(viewport.originX, viewport.drawWidth, cameraFlipH, () => {
+      this.drawLevel(state, focusLevel, viewport.originX, viewport.originY, viewport.cellSize, animation, 0, new Set([focusLevel.id]));
+    });
 
     if (options.infoText) {
       this.drawInfo(width, height, options.infoText);
