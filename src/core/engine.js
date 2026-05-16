@@ -102,7 +102,11 @@ export function tryImpulse(state, playerId, dir) {
     renderPhantoms: [],
     playerChanges: [],
     command: dir.dx === 1 ? "R" : dir.dx === -1 ? "L" : dir.dy === 1 ? "D" : "U",
-    stateBefore: snapshotState(state)
+    stateBefore: snapshotState(state),
+    // C# UndoManager.Turn fields for camera flip state.
+    cameraFlipChanged: false,
+    fromCameraFlipH: false,
+    toCameraFlipH: false
   };
 
   const context = {
@@ -1021,8 +1025,20 @@ function resolveMove(context, block, toLevel, toX, toY, dx, dy) {
   const trail = collectMoveTrail(context, block);
   const moveType = trail.length > 0 ? trail[trail.length - 1].moveType : null;
   const projection = computeProjectionFromTrail(trail) ?? { dx: 0, dy: 0, xscale: 1, yscale: 1 };
+  const cameraProjection = computeProjectionParentFromTrail(trail);
   const animKind = trail.some((step) => step.moveType === "Enter" || step.moveType === "Exit") ? "ENTER_EXIT" : "NORMAL";
   const existing = context.resolvedMoves.get(block.id);
+  if (cameraProjection) {
+    context.transition.cameraProjection = cameraProjection;
+    context.transition.camX = cameraProjection.dx;
+    context.transition.camY = cameraProjection.dy;
+    context.transition.camXS = cameraProjection.xscale;
+    context.transition.camYS = cameraProjection.yscale;
+    context.transition.cameraMovedThisTurn = true;
+  }
+  if (block.isPlayer && block.outerLevel !== toLevel && block.tempFlipH !== block.flipH) {
+    context.transition.cameraFlipChanged = true;
+  }
   if (existing) {
     existing.toLevel = toLevel;
     existing.toX = toX;
@@ -1146,6 +1162,71 @@ function buildRenderPhantoms(moves) {
  */
 function toCSharpY(level, y) {
   return (level?.height ?? 1) - 1 - y;
+}
+
+/**
+ * Mirrors Projection.ComputeProjectionParent in screen-space coordinates.
+ *
+ * @param {Array<any>} trail
+ * @returns {{ xscale: number, yscale: number, dx: number, dy: number } | null}
+ */
+function computeProjectionParentFromTrail(trail) {
+  if (!Array.isArray(trail) || trail.length === 0) {
+    return null;
+  }
+  if (trail.length === 1 && trail[0].moveType === "Slide") {
+    return { xscale: 1, yscale: 1, dx: 0, dy: 0 };
+  }
+
+  const moves = trail.filter((move) => move.moveType !== "Slide");
+  if (moves.length === 0) {
+    return null;
+  }
+
+  let dx = 0;
+  let dy = 0;
+  let xscale = 1;
+  let yscale = 1;
+  let flipSign = 1;
+
+  for (let index = moves.length - 1; index >= 0; index -= 1) {
+    const move = moves[index];
+    if (move.moveType === "Enter") {
+      const block = move.toLevelBlock;
+      const fromLevel = move.fromLevel;
+      if (!block || !fromLevel) {
+        return null;
+      }
+      if (block.flipH) {
+        flipSign *= -1;
+      }
+      dx += (block.xpos - (fromLevel.width - 1) / 2) / xscale * flipSign;
+      dy += (block.ypos - (fromLevel.height - 1) / 2) / yscale;
+      xscale /= fromLevel.width;
+      yscale /= fromLevel.height;
+    } else if (move.moveType === "Exit") {
+      const toLevel = move.toLevel;
+      const fromLevelBlock = move.fromLevelBlock;
+      if (!toLevel || !fromLevelBlock) {
+        return null;
+      }
+      xscale *= toLevel.width;
+      yscale *= toLevel.height;
+      dx -= (fromLevelBlock.xpos - (toLevel.width - 1) / 2) / xscale * flipSign;
+      dy -= (fromLevelBlock.ypos - (toLevel.height - 1) / 2) / yscale;
+      if (getExitBlock(move.fromLevel)?.flipH) {
+        flipSign *= -1;
+      }
+    }
+  }
+
+  const baseLevel = moves.find((move) => move.fromLevel)?.fromLevel ?? null;
+  if (!baseLevel) {
+    return null;
+  }
+  xscale *= baseLevel.camZoomFactor ?? 1;
+  yscale *= baseLevel.camZoomFactor ?? 1;
+  return { xscale, yscale, dx, dy };
 }
 
 /**

@@ -1172,6 +1172,7 @@ export class CanvasRenderer {
     this.tintContext = null;
     this.wallBigQuads = null;
     this.wallBigDataLoadStarted = false;
+    this.cameraFlipH = false;
     this.beginTextureLoad();
   }
 
@@ -1693,7 +1694,7 @@ export class CanvasRenderer {
     context.restore();
 
     if (drawFace && (block.isPlayer || block.possessable)) {
-      this.drawFace(block, x, y, width, height, flipH);
+      this.drawFace(block, x, y, width, height, flipH !== Boolean(block.flipH));
     }
   }
 
@@ -2302,8 +2303,9 @@ export class CanvasRenderer {
    * @param {number} y
    * @param {number} width
    * @param {number} height
+   * @param {boolean} [flipH]
    */
-  drawFlipShine(block, x, y, width, height) {
+  drawFlipShine(block, x, y, width, height, flipH = false) {
     const intensity = resolveFlipIntensity(block);
     if (intensity <= 0 || block?.subLevel?.filledWithWalls) {
       return;
@@ -2311,7 +2313,7 @@ export class CanvasRenderer {
     const context = this.context;
     const screenFraction = this.getFractionOfScreen(width, height);
     const alpha = Math.min(0.22, Math.max(0.04, -Math.log10(screenFraction + 0.5) + 0.18)) * intensity;
-    const reverse = Boolean(block.flipH || block.specialEffect === 3);
+    const reverse = Boolean(block.flipH || block.specialEffect === 3) !== flipH;
     const gradient = context.createLinearGradient(reverse ? x + width : x, y, reverse ? x : x + width, y);
     gradient.addColorStop(0, "rgba(255,255,255,0)");
     gradient.addColorStop(0.3, "rgba(255,255,255,0)");
@@ -2397,7 +2399,7 @@ export class CanvasRenderer {
           }
 
           if (block.isPlayer && cellSize >= 9) {
-            this.drawFace(block, blockX + inset, blockY + inset, Math.max(1, cellSize - inset * 2), Math.max(1, cellSize - inset * 2), block.flipH);
+            this.drawFace(block, blockX + inset, blockY + inset, Math.max(1, cellSize - inset * 2), Math.max(1, cellSize - inset * 2), false);
           }
         }
       }
@@ -2509,7 +2511,7 @@ export class CanvasRenderer {
       this.drawTexture("blockGradient", drawX, drawY, width, height, 0.06);
     }
 
-    this.drawFlipShine(block, drawX, drawY, width, height);
+    this.drawFlipShine(block, drawX, drawY, width, height, flipH);
 
     if (shouldDrawInfinityEffect(block)) {
       const target = block.subLevel?.infZone && nestedWindow
@@ -2519,7 +2521,7 @@ export class CanvasRenderer {
     }
 
     if (block.isPlayer || block.possessable) {
-      this.drawFace(block, drawX, drawY, width, height, flipH);
+      this.drawFace(block, drawX, drawY, width, height, flipH !== Boolean(block.flipH));
     }
   }
 

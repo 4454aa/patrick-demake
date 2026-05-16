@@ -114,6 +114,7 @@ export function createBlock(overrides = {}) {
     flipH: false,
     tempFlipH: false,
     flipHStart: false,
+    fadeFlipH: false,
     possessable: false,
     tempInnerPush: false,
     justEnteredArray: null,

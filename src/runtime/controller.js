@@ -429,6 +429,9 @@ function handleCommand(controller, elements, command) {
     return;
   }
 
+  // C# Movement.Impulse: bool flipH2 = Draw.FlipH; FromCameraFlipH = Draw.FlipH;
+  const cameraFlipHBefore = controller.renderer.cameraFlipH;
+
   controller.sessionInputLog.push(command);
   const turn = runInputCommand(controller.currentState, command);
 
@@ -443,6 +446,31 @@ function handleCommand(controller, elements, command) {
       startedAt: performance.now(),
       duration: hasEnterOrExit ? ENTER_LENGTH * 1000 : baseDuration
     };
+
+    // C# Movement.cs:200 — after TurnCompleted (which applies block.FlipH = toFlipH):
+    //   if (Draw.FlipH != flipH2) { dxLast *= -1; }
+    // ResolveMove sets ToCameraFlipH = !Draw.FlipH when tempFlipH != block.FlipH.
+    // TurnCompleted → DoRedo applies Draw.FlipH = ToCameraFlipH.
+    // So: if player's flip state changed, toggle cameraFlipH (immediate, matching C#).
+    if (command !== "Z" && command !== "Y" && command !== "Restart") {
+      const cameraFlipChanged = Boolean(turn.cameraFlipChanged);
+      if (cameraFlipChanged) {
+        controller.renderer.cameraFlipH = !controller.renderer.cameraFlipH;
+      }
+    }
+
+    // Store camera state for undo/redo (C# FromCameraFlipH/ToCameraFlipH).
+    turn.fromCameraFlipH = cameraFlipHBefore;
+    turn.toCameraFlipH = controller.renderer.cameraFlipH;
+  }
+
+  // C# UndoManager: Undo → Draw.FlipH = t.FromCameraFlipH; Redo → Draw.FlipH = t.ToCameraFlipH;
+  if (command === "Z" && turn?.fromCameraFlipH !== undefined) {
+    controller.renderer.cameraFlipH = turn.fromCameraFlipH;
+  } else if (command === "Y" && turn?.toCameraFlipH !== undefined) {
+    controller.renderer.cameraFlipH = turn.toCameraFlipH;
+  } else if (command === "Restart") {
+    controller.renderer.cameraFlipH = false;
   }
 
   if (controller.currentState.winning) {
